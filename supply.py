@@ -1,11 +1,4 @@
-"""quant_models.py
-A generic, scalable module that offers:
-1. Facility Location Optimization (Mixed‑Integer Linear Programming) using PuLP.
-2. Holt‑Winters Additive Exponential Smoothing implemented from scratch.
-Both classes are dimension‑agnostic and work with arbitrary input sizes.
-Author: ChatGPT
-Date: 2025‑05‑06
-"""
+
 from __future__ import annotations
 
 from typing import List, Sequence, Tuple, Dict, Optional
@@ -22,21 +15,8 @@ __all__ = [
 # 1. OPTIMIZATION MODEL – FACILITY LOCATION
 # ----------------------------------------------------------------------------
 class FacilityLocationSolver:
-    """Solve the (capacitated) facility‑location problem via MILP.
 
-    Parameters
-    ----------
-    fixed_costs : Sequence[float]
-        Opening cost for each facility *i* (length *n*).
-    transport_costs : Sequence[Sequence[float]]
-        Unit shipping cost from facility *i* to demand point *j* (shape *n×m*).
-    demand : Sequence[float]
-        Required demand at each point *j* (length *m*).
-    capacity : Optional[Sequence[float]]
-        Maximum capacity of each facility (length *n*). If ``None`` → uncapacitated.
-    solver : str, default "PULP_CBC_CMD"
-        Any PuLP‑compatible MILP solver identifier.
-    """
+
 
     def __init__(
         self,
@@ -145,12 +125,7 @@ class FacilityLocationSolver:
 # 2. FORECASTING MODEL – HOLT‑WINTERS ADDITIVE
 # ----------------------------------------------------------------------------
 class HoltWintersForecaster:
-    """Additive Holt‑Winters seasonal exponential smoothing implemented from scratch.
 
-    Works with any season length `m` ≥ 1. Parameters α, β, γ are either
-    user‑specified or estimated via a simple grid search on one‑step‑ahead
-    mean‑squared‑error.
-    """
 
     def __init__(
         self,
